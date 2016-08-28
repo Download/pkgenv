@@ -49,38 +49,35 @@ var pkg = require('pkgcfg')();
 console.info(pkg.apiKey); // '1e567a-a4e67f'
 ```
 
-## {env (name, [defaultValue])}
+## {env (name='NODE_JS', defaultValue='')}
 Reference environment variables.
 * `npm install --save-dev` [pkgenv](https://www.npmjs.com/package/pkgenv)
 
 ### name
-Optional String. The name of the environment variable to read.
+Optional String. The name of the environment variable to read. Defaults to `'NODE_JS'`.
 
 ### defaultValue
 Optional String. The default value to use when no environment variable with
-the given `name` exists. If not specified the tag text will be returned
-unmodified, except when `name` was also not specified in which case the
-empty string is used as default value.
+the given `name` exists. Defaults tp `''` (empty string).
 
 ### examples
 ```json
 {
   "ex1": "{env PATH}",
   "ex2": "{env DOES_NOT_EXIST}",
-  "ex3": "{env ('DOES_NOT_EXIST', '')}",
+  "ex3": "{env ('DOES_NOT_EXIST', 'default value')}",
   "ex4": "{env}",
-  "ex5": "{env ('NODE_ENV', '')}",
-  "ex6": "{env NODE_ENV}",
+  "ex5": "{env NODE_ENV}",
+  "ex6": "{env ('NODE_ENV', '')}",
 }
 ```
 * `ex1` will be resolved to the contents of the `PATH` environment variable.
-* `ex2` will be resolved to `'{env DOES_NOT_EXIST}'`
-* `ex3` will be resolved to `''` (empty string)
+* `ex2` will be resolved to `''` (empty string)
+* `ex3` will be resolved to `'default-value'`
 * `ex4` will be resolved to the contents of `process.env.NODE_ENV`,
    or to `''` (empty string) if `NODE_ENV` is not set.
 * `ex5` is equavalent to `ex4`.
-* `ex6` will be resolved to the contents of `process.env.NODE_ENV`,
-   or to `'{env NODE_ENV}'` if `NODE_ENV` is not set.
+* `ex6` is equavalent to `ex4`.
 
 ## Issues
 Add an issue in this project's [issue tracker](https://github.com/download/pkgenv/issues)
