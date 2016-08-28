@@ -57,7 +57,7 @@ Optional String. The name of the environment variable to read. Defaults to `'NOD
 
 ### defaultValue
 Optional String. The default value to use when no environment variable with
-the given `name` exists. Defaults tp `''` (empty string).
+the given `name` exists. Defaults to `''` (empty string).
 
 ### examples
 ```json
@@ -72,7 +72,7 @@ the given `name` exists. Defaults tp `''` (empty string).
 ```
 * `ex1` will be resolved to the contents of the `PATH` environment variable.
 * `ex2` will be resolved to `''` (empty string)
-* `ex3` will be resolved to `'default-value'`
+* `ex3` will be resolved to `'default value'`
 * `ex4` will be resolved to the contents of `process.env.NODE_ENV`,
    or to `''` (empty string) if `NODE_ENV` is not set.
 * `ex5` is equavalent to `ex4`.
