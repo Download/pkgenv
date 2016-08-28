@@ -1,7 +1,7 @@
 {
   "name": "pkgenv",
-  "version": "0.2.0",
-  "description": "pkgcfg transform to reference environment variables in package.json.",
+  "version": "0.4.0",
+  "description": "pkgcfg tag to reference environment variables in package.json.",
   "main": "pkgenv.js",
   "repository": {
     "type": "git",
@@ -12,41 +12,19 @@
     "test-watch": "mocha --watch pkgenv.spec.js"
   },
   "test": {
-    "data": {
-      "env": "PATH"
-    },
+    "env-with-name": "{env PATH}",
     "undefined-env": "{env SOME_UNDEFINED_ENV}",
     "undefined-env-with-default": "{env ('SOME_UNDEFINED_ENV', 'default-value')}",
     "node-env": "{env}",
-    "other-env": "{env PATH}",
-    "ref-env": "{env {pkg test.data.env}}"
+    "ref-env": "{env {pkg test.data.env}}",
+    "data": {"env": "PATH"}
   },
   "keywords": [
     "package.json",
     "configuration",
-    "pkgand",
-    "pkgarg",
-    "pkgcfg",
-    "pkgempty",
-    "pkgenv",
-    "pkgeq",
-    "pkgexp",
-    "pkgfor",
-    "pkggen",
-    "pkggt",
-    "pkggte",
-    "pkgif",
-    "pkglt",
-    "pkglte",
-    "pkgmerge",
-    "pkgneq",
-    "pkgneq",
-    "pkgnot",
-    "pkgop",
-    "pkgor",
-    "pkgpath",
-    "pkgtransform",
-    "pkgvar"
+    "environment",
+    "env",
+    "pkgcfg"
   ],
   "author": "Stijn de Witt",
   "license": "CC-BY-4.0",
@@ -54,14 +32,12 @@
     "url": "https://github.com/download/pkgenv/issues"
   },
   "homepage": "https://github.com/download/pkgenv",
-  "dependencies": {},
-  "peerDependencies": {
-    "pkgcfg": "^0.3.0"
+  "dependencies": {
+    "pkgcfg": "0.4"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.3.4",
-    "picolog": "^1.0.0",
-    "pkgcfg": "^0.3.3"
+    "mocha": "^3.0.2",
+    "picolog": "^1.0.0"
   }
 }
