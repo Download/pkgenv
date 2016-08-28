@@ -51,7 +51,6 @@ console.info(pkg.apiKey); // '1e567a-a4e67f'
 
 ## {env (name='NODE_JS', defaultValue='')}
 Reference environment variables.
-* `npm install --save-dev` [pkgenv](https://www.npmjs.com/package/pkgenv)
 
 ### name
 Optional String. The name of the environment variable to read. Defaults to `'NODE_JS'`.
