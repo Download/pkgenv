@@ -1,6 +1,8 @@
 ﻿var pkgcfg = require('pkgcfg');
 
-function pkgenv(pkg, node, name='NODE_ENV', defaultValue='') {
+function pkgenv(pkg, node, name, defaultValue) {
+	if (!name) {name = 'NODE_ENV'}
+	if (!defaultValue) {defaultValue = ''}
 	return process.env[name] || defaultValue;
 }
 
