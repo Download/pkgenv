@@ -1,6 +1,6 @@
 {
   "name": "pkgenv",
-  "version": "0.5.1",
+  "version": "0.7.0",
   "description": "pkgcfg tag to reference environment variables in package.json.",
   "main": "pkgenv.js",
   "repository": {
@@ -17,7 +17,9 @@
     "undefined-env-with-default": "{env ('SOME_UNDEFINED_ENV', 'default-value')}",
     "node-env": "{env}",
     "ref-env": "{env {pkg test.data.env}}",
-    "data": {"env": "PATH"}
+    "data": {
+      "env": "PATH"
+    }
   },
   "keywords": [
     "package.json",
@@ -33,7 +35,7 @@
   },
   "homepage": "https://github.com/download/pkgenv",
   "dependencies": {
-    "pkgcfg": "0.x"
+    "pkgcfg": "^0.7.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
