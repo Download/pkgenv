@@ -19,9 +19,10 @@ npm install --save pkgenv
 ```
 
 ## Registration
-`pkgenv` will register itself with `pkgcfg` automatically on `require`. However it
-is recommended that you add `'env'` to the array of `pkgcfg` `tags` in `package.json`.
-See the pkgcfg docs on [using external tags](https://www.npmjs.com/package/pkgcfg#using-external-tags)
+The `{env}` tag from `pkgenv` will be auto-discovered by `pkgcfg` because it
+follows the package naming convention. You can also register it explicitly by
+adding `'env'` to the array of `pkgcfg` `tags` in `package.json`. See the pkgcfg
+docs on [using external tags](https://www.npmjs.com/package/pkgcfg#using-external-tags)
 for more information.
 
 ## Usage
@@ -31,22 +32,14 @@ Assume we have some API key `1e567a-a4e67f` that is set in the environment varia
 _package.json:_
 ```json
 {
-  "name": "my-project",
-  "version": "1.0.0",
-  "main": "src/my-project.js",
   "apiKey": "{env API_KEY}",
-  "pkgcfg": {
-    "tags": [
-      "env"
-    ]
-  }
 }
 ```
 
 Then, read your `package.json` with [pkgcfg](https://npmjs.com/package/pkgcfg):
 ```js
-var pkg = require('pkgcfg')();
-console.info(pkg.apiKey); // '1e567a-a4e67f'
+var cfg = require('pkgcfg')();
+console.info(cfg.apiKey); // '1e567a-a4e67f'
 ```
 
 ## {env (name='NODE_JS', defaultValue='')}
