@@ -1,4 +1,4 @@
-﻿var log = require('picolog');
+﻿var log = require('ulog')('pkgenv:spec');
 var pkgcfg = require('pkgcfg');
 var pkgenv = require('./pkgenv');
 var expect = require('chai').expect;
