@@ -1,6 +1,8 @@
 # pkgenv <sup><sub>0.8.0</sub></sup>
 ## One configuration to rule them all
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Download/pkgenv.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/pkgenv.svg?maxAge=2592000)](https://npmjs.com/package/pkgenv)
 [![license](https://img.shields.io/npm/l/pkgenv.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![travis](https://img.shields.io/travis/Download/pkgenv.svg)](https://travis-ci.org/Download/pkgenv)
