@@ -38,7 +38,7 @@
     "pkgcfg": "^0.8.1"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^4.0.2",
     "mocha": "^3.1.2",
     "ulog": "^1.0.0"
   }
