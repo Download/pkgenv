@@ -1,4 +1,4 @@
-# pkgenv <sup><sub>0.8.0</sub></sup>
+# pkgenv <sup><sub>0.9.0</sub></sup>
 ## One configuration to rule them all
 
 [![npm](https://img.shields.io/npm/v/pkgenv.svg?maxAge=2592000)](https://npmjs.com/package/pkgenv)
@@ -9,7 +9,7 @@
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
 
-**[pkgcfg](https://npmjs.com/package/pkgcfg) tag to reference environment variables in package.json.**
+**[pkgcfg](https://npmjs.com/package/pkgcfg) tag to reference environment variables.**
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
 
@@ -19,20 +19,20 @@ npm install --save pkgenv
 ```
 
 ## Registration
-The `{env}` tag from `pkgenv` will be auto-discovered by `pkgcfg` because it
-follows the package naming convention. You can also register it explicitly by
-adding `'env'` to the array of `pkgcfg` `tags` in `package.json`. See the pkgcfg
-docs on [using external tags](https://www.npmjs.com/package/pkgcfg#using-external-tags)
+The `env{}` tag from `pkgenv` will be auto-discovered by `pkgcfg` because it follows 
+the package naming convention. You can also register it explicitly by adding `'env'` 
+to the array of `pkgcfg` `tags` in `package.json`. See the pkgcfg docs on 
+[using external tags](https://www.npmjs.com/package/pkgcfg#using-external-tags) 
 for more information.
 
 ## Usage
 Assume we have some API key `1e567a-a4e67f` that is set in the environment variable
-`API_KEY`. Here is how you can use `{env}` to reference it in your `package.json`:
+`API_KEY`. Here is how you can use `env{}` to reference it in your `package.json`:
 
 _package.json:_
 ```json
 {
-  "apiKey": "{env API_KEY}",
+  "apiKey": "env{API_KEY}",
 }
 ```
 
@@ -42,7 +42,7 @@ var cfg = require('pkgcfg')();
 console.info(cfg.apiKey); // '1e567a-a4e67f'
 ```
 
-## {env (name='NODE_JS', defaultValue='')}
+## env{(name='NODE_JS', defaultValue='')}
 Reference environment variables.
 
 ### name
@@ -55,12 +55,12 @@ the given `name` exists. Defaults to `''` (empty string).
 ### examples
 ```json
 {
-  "ex1": "{env PATH}",
-  "ex2": "{env DOES_NOT_EXIST}",
-  "ex3": "{env ('DOES_NOT_EXIST', 'default value')}",
-  "ex4": "{env}",
-  "ex5": "{env NODE_ENV}",
-  "ex6": "{env ('NODE_ENV', '')}",
+  "ex1": "env{PATH}",
+  "ex2": "env{DOES_NOT_EXIST}",
+  "ex3": "env{('DOES_NOT_EXIST', 'default value')}",
+  "ex4": "env{}",
+  "ex5": "env{NODE_ENV}",
+  "ex6": "env{('NODE_ENV', '')}",
 }
 ```
 * `ex1` will be resolved to the contents of the `PATH` environment variable.
