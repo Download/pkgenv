@@ -39,7 +39,7 @@
     "ulog": "^1.1.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^3.1.2"
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
   }
 }
